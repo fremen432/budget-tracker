@@ -84,5 +84,10 @@ function saveRecord(record) {
 //     };
 // }
 
+function uploadTransAction() {
+    console.log("hey");
+    console.log(db.transaction);
+}
+
 // listen for app coming back online
 window.addEventListener('online', uploadTransAction);
