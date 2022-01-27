@@ -44,49 +44,44 @@ function saveRecord(record) {
     transActionObjectStore.add(record);
 }
 
-// function uploadTransAction() {
-//     // open a transaction on your pending db
-//     const transaction = db.transaction(['new_transAction'], 'readwrite');
-
-//     // access your pending object store
-//     const transActionObjectStore = transaction.objectStore('new_transAction');
-
-//     // get all records from store and set to a variable
-//     const getAll = transActionObjectStore.getAll();
-
-//     getAll.onsuccess = function() {
-//         // if there was data in indexedDb's store, let's send it to the api server
-//         if (getAll.result.length > 0) {
-//         fetch('/api/transactions', {
-//             method: 'POST',
-//             body: JSON.stringify(getAll.result),
-//             headers: {
-//             Accept: 'application/json, text/plain, */*',
-//             'Content-Type': 'application/json'
-//             }
-//         })
-//             .then(response => response.json())
-//             .then(serverResponse => {
-//             if (serverResponse.message) {
-//                 throw new Error(serverResponse);
-//             }
-
-//             const transaction = db.transaction(['new_transAction'], 'readwrite');
-//             const transActionObjectStore = transaction.objectStore('new_transAction');
-//             // clear all items in your store
-//             transActionObjectStore.clear();
-//             })
-//             .catch(err => {
-//             // set reference to redirect back here
-//             console.log(err);
-//             });
-//         }
-//     };
-// }
-
 function uploadTransAction() {
-    console.log("hey");
-    console.log(db.transaction);
+    // open a transaction on your pending db
+    const transaction = db.transaction(['new_transAction'], 'readwrite');
+
+    // access your pending object store
+    const transActionObjectStore = transaction.objectStore('new_transAction');
+
+    // get all records from store and set to a variable
+    const getAll = transActionObjectStore.getAll();
+
+    getAll.onsuccess = function() {
+        // if there was data in indexedDb's store, let's send it to the api server
+        if (getAll.result.length > 0) {
+        fetch('/api/transactions', {
+            method: 'POST',
+            body: JSON.stringify(getAll.result),
+            headers: {
+            Accept: 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(serverResponse => {
+            if (serverResponse.message) {
+                throw new Error(serverResponse);
+            }
+
+            const transaction = db.transaction(['new_transAction'], 'readwrite');
+            const transActionObjectStore = transaction.objectStore('new_transAction');
+            // clear all items in your store
+            transActionObjectStore.clear();
+            })
+            .catch(err => {
+            // set reference to redirect back here
+            console.log(err);
+            });
+        }
+    };
 }
 
 // listen for app coming back online
