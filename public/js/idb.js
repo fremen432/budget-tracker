@@ -11,24 +11,24 @@ request.onupgradeneeded = function(event) {
     const db = event.target.result;
     // create an object store (table) called `new_transaction`, set it to have an auto incrementing primary key of sorts 
     db.createObjectStore('new_transaction', { autoIncrement: true });
-  };
+};
 
-  // upon a successful 
+// upon a successful 
 request.onsuccess = function(event) {
     // when db is successfully created with its object store (from onupgradedneeded event above) or simply established a connection, save reference to db in global variable
     db = event.target.result;
-  
+
     // check if app is online, if yes run uploadtransAction() function to send all local db data to api
     if (navigator.onLine) {
-      // we haven't created this yet, but we will soon, so let's comment it out for now
-      uploadtransAction();
+        // we haven't created this yet, but we will soon, so let's comment it out for now
+        uploadtransAction();
     }
-  };
+};
   
-  request.onerror = function(event) {
+request.onerror = function(event) {
     // log error here
     console.log(event.target.errorCode);
-  };
+};
 
 //   writing data ------------------------------------------------------------------
 
@@ -83,7 +83,6 @@ function uploadTransAction() {
         }
     };
 }
-  
-  // listen for app coming back online
-  window.addEventListener('online', uploadTransAction);
-  
+
+// listen for app coming back online
+window.addEventListener('online', uploadTransAction);
