@@ -37,6 +37,5 @@ THEN the deposits or expenses added while they were offline are added to their t
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
-- [ReactJS](https://www.npmjs.com/package/react)
-- [react-dom](https://www.npmjs.com/package/react-dom)
-- [react-scripts](https://www.npmjs.com/package/react-scripts)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
