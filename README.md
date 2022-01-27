@@ -1,15 +1,14 @@
 # Module 19 Challenge - Budget Tracker
 
-<!-- <h1 align="center">
-    <a href="" target="_blank">
+<h1 align="center">
+    <a href="https://budget-tracker-cbm.herokuapp.com/" target="_blank">
      Live Page
     </a>
 </h1>
 
 <div align="center">
-    <!-- <img src="./assets/screenshot.png" width="600px"> -->
-    <img src="./assets/react-portfolio-video.gif" width="100%">
-</div> -->
+    <img src="./assets/screenshot.png" width="100%">
+</div>
 
 ## Challenge Description:
 
