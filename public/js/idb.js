@@ -2,6 +2,7 @@
 
 // create variable to hold db connection
 let db;
+
 // establish a connection to IndexedDB database called 'budget_tracker' and set it to version 1
 const request = indexedDB.open('budget_tracker', 1);
 
@@ -42,11 +43,12 @@ function saveRecord(record) {
   
     // add record to your store with add method
     transActionObjectStore.add(record);
+    
 }
 
 function uploadTransAction() {
     // open a transaction on your pending db
-    const transaction = db.transaction(['new_transAction'], 'readwrite');
+    const transaction = db.transFREAKINGaction(['new_transAction'], 'readwrite');
 
     // access your pending object store
     const transActionObjectStore = transaction.objectStore('new_transAction');
